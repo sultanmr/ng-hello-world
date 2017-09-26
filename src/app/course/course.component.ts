@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
 
-import {CoursesService} from '../courses.service';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-course',
   template: `
-  <input (keyup.enter)="onKeyUp()" />
-
+  <input (keyup.enter)="onKeyUp1($event)" />
+  <input #email (keyup.enter)="onKeyUp2(email.value)" />
   `,
   styleUrls: ['./course.component.css']
 })
 
 export class CourseComponent {
 
-    onKeyUp($event) {
+  onKeyUp1($event) {
 
-        console.log ("enter was pressed");
-    }
+    console.log($event.target.value);
+  }
+
+  onKeyUp2(val) {
+
+    console.log(val);
+  }
 }
