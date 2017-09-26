@@ -13,7 +13,8 @@ import {CoursesService} from '../courses.service';
   </td>
   </tr>
   </table>
-  <button class="btn btn-primary" [class.active]="isActive">Save</button>
+  <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
+  <button [style.backgroundColor]="bkColor">Style Binding</button>
   `,
   styleUrls: ['./course.component.css']
 })
@@ -22,7 +23,7 @@ export class CourseComponent {
   imageUrl = "http://lorempixel.com/400/200"
   colspan = 2;  
   isActive = true;
-
+bkColor = '#ff0000';
   constructor () {
 
   }
