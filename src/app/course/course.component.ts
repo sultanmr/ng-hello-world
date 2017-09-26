@@ -13,6 +13,7 @@ import {CoursesService} from '../courses.service';
   </td>
   </tr>
   </table>
+  <button class="btn btn-primary">Save</button>
   `,
   styleUrls: ['./course.component.css']
 })
