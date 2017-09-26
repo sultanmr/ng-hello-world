@@ -1,25 +1,29 @@
 import { Component } from '@angular/core';
 
+
 import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-course',
   template: `
-  <input (keyup.enter)="onKeyUp1($event)" />
-  <input #email (keyup.enter)="onKeyUp2(email.value)" />
+  <input [value]="email1" (keyup.enter)="email1=$event.target.value; onKeyUp1()" />
+  <input [(ngModel)]="email2" (keyup.enter)="onKeyUp2()" />
   `,
   styleUrls: ['./course.component.css']
 })
 
 export class CourseComponent {
 
-  onKeyUp1($event) {
+  email1="me@example.com";
+  email2="me2@example.com";
+  onKeyUp1() {
 
-    console.log($event.target.value);
+    console.log(this.email1);
   }
 
-  onKeyUp2(val) {
+  onKeyUp2() {
+    
+        console.log(this.email2);
+      }
 
-    console.log(val);
-  }
 }
