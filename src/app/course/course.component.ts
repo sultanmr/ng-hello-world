@@ -13,7 +13,7 @@ import {CoursesService} from '../courses.service';
   </td>
   </tr>
   </table>
-  <button class="btn btn-primary">Save</button>
+  <button class="btn btn-primary" [class.active]="isActive">Save</button>
   `,
   styleUrls: ['./course.component.css']
 })
@@ -21,6 +21,7 @@ export class CourseComponent {
   title = "list of courses";
   imageUrl = "http://lorempixel.com/400/200"
   colspan = 2;  
+  isActive = true;
 
   constructor () {
 
