@@ -3,11 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { InputFormatDirective } from './input-format.directive';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,

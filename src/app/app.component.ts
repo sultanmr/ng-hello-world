@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  task = {
-    title: 'Review applications',
-    assignee: null
-  }
 }
