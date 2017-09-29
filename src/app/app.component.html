@@ -2,6 +2,10 @@ search more on angular.io
 serach string "ngforof" DIRECTIVE <hr>
 <button (click)="LoadCourses()">Load Courses</button>
 <hr>
+<div *ngIf="courses.length>0; then listOfCourses else noCourses"></div>
+<ng-template #listOfCourses>
+   List of Courses
+   <hr>
 <button (click)="onAdd()">Add</button>
 <ul>
     <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse">
@@ -10,3 +14,25 @@ serach string "ngforof" DIRECTIVE <hr>
         <button (click)="onChangeName(course)">Change Name</button>
     </li>
 </ul>
+</ng-template>
+<ng-template #noCourses>
+    no Courses
+</ng-template>
+
+
+
+<ng-template [ngIf]="courses.length>0">
+   List of Courses
+   <hr>
+<button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse">
+        {{i}} - {{course.name}} <span *ngIf="isEven">(EVEN)</span>
+        <button (click)="onRemove(course)">Remove</button>
+        <button (click)="onChangeName(course)">Change Name</button>
+    </li>
+</ul>
+</ng-template>
+<ng-template [ngIf]="!(courses.length>0)">
+    no Courses
+</ng-template>
