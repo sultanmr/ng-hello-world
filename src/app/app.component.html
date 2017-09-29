@@ -1,10 +1,12 @@
-<ul class="nav nav-pills">
-   <li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
-   <li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+search more on angular.io 
+serach string "ngforof" DIRECTIVE <hr>
+<button (click)="LoadCourses()">Load Courses</button>
+<hr>
+<button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse">
+        {{i}} - {{course.name}} <span *ngIf="isEven">(EVEN)</span>
+        <button (click)="onRemove(course)">Remove</button>
+        <button (click)="onChangeName(course)">Change Name</button>
+    </li>
 </ul>
-<script>console.log("this line DOESN'T SHOW UP anywhere");</script>
-<div [ngSwitch]="viewMode">
-    <div *ngSwitchCase="'map'">Map View Content</div>
-    <div *ngSwitchCase="'list'">List View Content</div>
-    <div *ngSwitchDefault>Otherwise</div>
-</div>
