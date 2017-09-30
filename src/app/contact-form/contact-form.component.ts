@@ -10,6 +10,12 @@ export class ContactFormComponent  {
     console.log(x);
   }
 
+  contactMethods = [
+    { id:1, name:'Email'},
+    { id:2, name:'Fax'},
+    { id:3, name:'Phone'},
+    { id:4, name:'Google'},
+  ]
   submit(f) {
     console.log(f.value);
   }
