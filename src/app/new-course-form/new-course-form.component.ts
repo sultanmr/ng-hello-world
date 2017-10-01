@@ -26,6 +26,10 @@ export class NewCourseFormComponent {
       topics: fb.array([])
     });
   }
+
+  get topics () {
+    return this.form.get('topics') as FormArray;
+  }
  
   
 }
