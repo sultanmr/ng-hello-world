@@ -3,12 +3,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SignupFormComponent } from './signup-form/Signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupFormComponent
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
